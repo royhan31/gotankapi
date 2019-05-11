@@ -17,13 +17,13 @@ class CreateAdminTanggapansTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('ratting');
             $table->string('komentar',250);
-            $table->unsignedBigInteger('admin_id'); 
-            $table->foreign('admin_id')->references('id')->on('admins'); 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('pesan_id');
-            $table->foreign('pesan_id')->references('id')->on('pesans');
-            $table->timestamps();
+            // $table->unsignedBigInteger('admin_id');
+            // $table->foreign('admin_id')->references('id')->on('admins');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
+            // $table->unsignedBigInteger('pesan_id');
+            // $table->foreign('pesan_id')->references('id')->on('pesans');
+            // $table->timestamps();
         });
     }
 

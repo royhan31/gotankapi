@@ -2,15 +2,16 @@
 
 use Illuminate\Http\Request;
 
-//adminCv
-Route::post('admin/register','AdminController@register');
-Route::post('admin/login','AdminController@login');
-Route::get('admin','AdminController@listAdmin');
-Route::get('admin/{admin}','AdminController@getAdmin');
+//adminCv atu Company
+Route::get('/company','API\Company\CompanyController@index');
+// Route::post('admin/register','API\Admin\AuthAdminController@register');
+// Route::post('admin/login','API\Admin\AuthAdminController@login');
+// Route::get('admin','API\Admin\AuthAdminController@listAdmin');
+// Route::get('admin/{admin}','API\Admin\AuthAdminController@getAdmin');
 
 // User/pengguna
-Route::post('user/register','UserController@register');
-Route::post('user/login','UserController@login');
+Route::post('user/register','API\User\AuthUserController@register');
+Route::post('user/login','API\User\AuthUserController@login');
 
 // Driver
 Route::post('driver/register', 'DriverController@register');

@@ -19,7 +19,7 @@ class CreateDriversTable extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('api_token');
-            $table->string('foto_driver',250);
+            $table->string('avatar')->default('default.jpg')->nullable();
             $table->timestamps();
         });
     }
