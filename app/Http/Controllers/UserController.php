@@ -40,8 +40,7 @@ class UserController extends Controller
         ];
 
         
-        if(!Auth::guard('web')->attempt($credential, false, false))
-        {
+        if(!Auth::guard('web')->attempt($credential, false, false)) {
         //return [!Auth::attempt($credential)];
         //if(!Auth::attempt($credential)){
             return [
