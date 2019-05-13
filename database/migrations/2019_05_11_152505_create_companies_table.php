@@ -16,12 +16,12 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('avatar')->default('default.jpg')->nullable();
             $table->text('address');
+            $table->string('phone',13)->unique();
             $table->rememberToken();
             $table->timestamps();
         });
