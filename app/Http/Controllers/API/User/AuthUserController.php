@@ -15,7 +15,8 @@ class AuthUserController extends Controller
           'name' => 'required',
           'email' => 'required|email|unique:users',
           'password' => 'required|min:6',
-          'phone' => 'required'
+          'phone' => 'required|min:11'
+          'address' => 'required'
       ]);
 
       $user = User::create([
@@ -24,6 +25,7 @@ class AuthUserController extends Controller
           'password'=>bcrypt($request->password),
           'api_token' => bcrypt($request->email),
           'phone' => $request->phone,
+          'address' => $request->address
       ]);
 
       return response()->json([
