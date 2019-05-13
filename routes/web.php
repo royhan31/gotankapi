@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Pemanggilan tanpa controller
+Route::get('admin/dashboard', function(){
+    return view('template_backend.admin.dashboard');
+});
+
+Route::get('company/dashboard', function(){
+    return view('template_backend.company.dashboard');
+});
