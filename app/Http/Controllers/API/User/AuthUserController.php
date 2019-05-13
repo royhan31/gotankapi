@@ -15,7 +15,7 @@ class AuthUserController extends Controller
           'name' => 'required',
           'email' => 'required|email|unique:users',
           'password' => 'required|min:6',
-          'phone' => 'required|min:11'
+          'phone' => 'required|min:11',
           'address' => 'required'
       ]);
 

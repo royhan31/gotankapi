@@ -21,7 +21,7 @@ class AuthCompanyController extends Controller
         'name' => 'required|min:3',
         'username' => 'required|min:3|unique:companies',
         'email' => 'required|email|max:255|unique:companies',
-        ''
+        'password' => 'required|'
       ])
     }
 }
