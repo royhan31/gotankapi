@@ -9,6 +9,7 @@ use Auth;
 
 class AuthUserController extends Controller
 {
+  //user register di android
   public function register(Request $request){
       $this->validate($request,[
           'name' => 'required',
@@ -18,11 +19,11 @@ class AuthUserController extends Controller
       ]);
 
       $user = User::create([
-          'name' => $request->nama_user,
+          'name' => $request->name,
           'email'=> $request->email,
           'password'=>bcrypt($request->password),
           'api_token' => bcrypt($request->email),
-          'phone' => $request->no_hp,
+          'phone' => $request->phone,
       ]);
 
       return response()->json([
@@ -32,6 +33,7 @@ class AuthUserController extends Controller
       ], 201);
   }
 
+  //user login di android
   public function login (Request $request)
   {
       $credential =[
