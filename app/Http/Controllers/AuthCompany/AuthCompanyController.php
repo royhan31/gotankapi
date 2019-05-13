@@ -12,7 +12,7 @@ class AuthCompanyController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest:company');
+        $this->middleware('guest:company')->except('logoutCompany');
     }
 
     public function showLoginForm(){
@@ -54,5 +54,11 @@ class AuthCompanyController extends Controller
       }
 
       return redirect()->route('dashboard');
+    }
+
+    public function logoutCompany(Request $request)
+    {
+      Auth::guard('company')->logout();
+      return redirect('/');
     }
 }

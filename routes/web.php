@@ -19,9 +19,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => '/'], function(){
   Route::get('login','AuthCompany\AuthCompanyController@showLoginForm')->name('login');
+  Route::post('login','AuthCompany\AuthCompanyController@login')->name('get.login');
   Route::get('register','AuthCompany\AuthCompanyController@showRegisterForm')->name('register');
   Route::post('register','AuthCompany\AuthCompanyController@register')->name('get.register');
-  Route::post('login','AuthCompany\AuthCompanyController@login')->name('get.login');
+  Route::post('logout','AuthCompany\AuthCompanyController@logoutCompany')->name('logout');
   Route::get('dashboard','Company\CompanyController@index')->name('dashboard');
 });
 
