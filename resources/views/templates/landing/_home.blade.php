@@ -26,15 +26,14 @@
       <li><a href="#service">Service</a></li>
       <!-- <li><a href="#team">Team</a></li> -->
       <li><a href="#contact">Contact</a></li>
-      <li><a href="login">Login</a></li>
-      <li><a href="register">Register</a></li>
-      {{-- <li><button class="btn btn-sm btn-success" type="button" value="Register" href="#" style="margin-top: 5px;"><i class="fa fa-user">
-        Daftar</i></button></li>
-      <li><button class="btn btn-sm btn-success" type="button" value="Register" href="#" style="margin-top: 5px;"><i class="fa fa-sign-in">
-        Daftar</i></button></li> --}}
+      @auth('company')
+      <li><a href="{{route('dashboard')}}">Beranda</a></li>
+      @else
+      <li><a href="{{route('login')}}">Login</a></li>
+      <li><a href="{{route('register')}}">Register</a></li>
+      @endauth
     </ul>
     <!-- /Main navigation -->
-
   </div>
 </nav>
     <!-- /Nav -->

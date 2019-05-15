@@ -9,19 +9,26 @@ class AuthAdminController extends Controller
 {
     public function __construct()
 	{
-		$this->middleware('auth:admin');
-	}
-
-	public function index()
-	{
-		return view('templates.admin.default');
+		$this->middleware('guest:admin')->except('logoutAdmin');
 	}
 
     public function showLoginForm(){
       return view('authAdmin.login');
     }
 
-    public function login(Request $reuest){
+    public function login(Request $request){
+      $credential = [
+        'email' => $request->email,
+        'password' => $request->password
+      ];
+      if (!Auth::guard('admin')->attempt($credential, $request->member)) {
+          return back()->withInput($request->only('email','remember'));
+      }
+      return redirect()->route('admin.dashboard');
+    }
 
+    public function logoutAdmin(Request $request){
+      Auth::guard('company')->logout();
+      return redirect('/admin/login');
     }
 }
