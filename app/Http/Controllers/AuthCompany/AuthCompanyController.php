@@ -5,7 +5,6 @@ namespace App\Http\Controllers\AuthCompany;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Validator;
-use App\Company;
 use Auth;
 
 class AuthCompanyController extends Controller{

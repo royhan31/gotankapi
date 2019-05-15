@@ -28,17 +28,7 @@ Route::group(['prefix' => '/'], function(){
 //route Super Admin
 Route::group(['prefix' => 'admin/'], function(){
   Route::get('login','AuthAdmin\AuthAdminController@showLoginForm')->name('admin.login');
-  Route::post('login','AuthAdmin\AuthAdminController@login')->name('admin.login');
-  Route::post('logout','AuthCompany\AuthAdminController@logoutAdmin')->name('admin.logout');
-  Route::get('beranda','Company\CompanyController@index')->name('admin.dashboard');
+  Route::post('login','AuthAdmin\AuthAdminController@login')->name('get.admin.login');
+  Route::post('logout','AuthAdmin\AuthAdminController@logoutAdmin')->name('admin.logout');
+  Route::get('beranda','Admin\AdminController@index')->name('admin.dashboard');
 });
-
-//==================================================================================
-
-//route Admin atau SuperAdmin
-
-Route::get('/admin', 'AuthAdmin\AuthAdminController@index')->name('admin');
-
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');

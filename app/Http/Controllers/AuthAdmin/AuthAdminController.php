@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AuthAdmin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class AuthAdminController extends Controller
 {
@@ -28,7 +29,7 @@ class AuthAdminController extends Controller
     }
 
     public function logoutAdmin(Request $request){
-      Auth::guard('company')->logout();
+      Auth::guard('admin')->logout();
       return redirect('/admin/login');
     }
 }

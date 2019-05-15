@@ -106,11 +106,11 @@
                 <a href="#" class="btn btn-default btn-flat">Profil</a>
               </div>
               <div class="pull-right">
-                <a href="{{ route('logout') }}"
+                <a href="{{ route('admin.logout') }}"
                    onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"
                 class="btn btn-default btn-flat">Keluar</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
               </div>
