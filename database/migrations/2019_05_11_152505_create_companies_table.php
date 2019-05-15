@@ -20,10 +20,6 @@ class CreateCompaniesTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->text('description')->nullable();
-<<<<<<< HEAD
-            $table->string('api_token');
-=======
->>>>>>> 8e75c07df5194f7c5d8fb08266a2b2911f6bddd1
             $table->string('avatar')->default('default.jpg')->nullable();
             $table->text('address');
             $table->string('phone',13)->unique();
