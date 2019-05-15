@@ -9,10 +9,7 @@ use App\Company;
 use Auth;
 
 class AuthCompanyController extends Controller{
-	public function index()	{
-		return view('pages.company.dashboard');
-	}
-
+	
     public function __construct(){
         $this->middleware('guest:company')->except('logoutCompany');
     }
@@ -21,7 +18,6 @@ class AuthCompanyController extends Controller{
       return view('authCompany.login');
     }
 
-    public function login(Request $request){
 		// $this->validate($request, [
   //           'email' => 'require|string|email|max:255|unique:companies',
   //           'password' => 'require|string|min:8|confirmed'
@@ -41,7 +37,6 @@ class AuthCompanyController extends Controller{
         //if unseccesfully, then redirect back to the login with from data
         return redirect()->back()->withInput($request->only('email', 'remember'));
     }
-
     public function showRegisterForm(){
       return view('authCompany.register');
     }
