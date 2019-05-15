@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('templates.admin.default')
 
 @section('title','Company Dashboard')
@@ -62,3 +63,6 @@
 @push('scripts')
 
 @endpush('')
+=======
+@extends('layouts.app')
+>>>>>>> 8e75c07df5194f7c5d8fb08266a2b2911f6bddd1
