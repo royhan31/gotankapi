@@ -45,24 +45,6 @@ class AuthCompanyController extends Controller{
     public function showRegisterForm(){
       return view('authCompany.register');
     }
-
-    public function register(Request $request){
-      $this->validate($request,[
-            'name' => 'required|string|max:191',
-            'email' => 'required|string|email|max:255|unique:companies',
-            'password' => 'required|string|min:8|confirmed',
-            'address' => 'required|max:250'
-        ]);
-
-      $company = Company::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'address' => $request->address,
-            'api_token' => bcrypt($request->email),
-        ]);
-        return redirect()->route('login')->with('success','Registration Success');
-    }
 	
 	public function register(Request $request){
       $this->validate($request, [
