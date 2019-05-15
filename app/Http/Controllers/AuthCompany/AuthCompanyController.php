@@ -17,26 +17,6 @@ class AuthCompanyController extends Controller{
     public function showLoginForm(){
       return view('authCompany.login');
     }
-
-		// $this->validate($request, [
-  //           'email' => 'require|string|email|max:255|unique:companies',
-  //           'password' => 'require|string|min:8|confirmed'
-  //       ]);
-
-        $credential = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
-
-        //Attempt to log the user in
-        if (Auth::guard('company')->attempt($credential, $request->member)) {
-            //if login success, then redirect to their intended
-            return redirect()->intended(route('company.dashboard'));
-        }
-
-        //if unseccesfully, then redirect back to the login with from data
-        return redirect()->back()->withInput($request->only('email', 'remember'));
-    }
     public function showRegisterForm(){
       return view('authCompany.register');
     }
