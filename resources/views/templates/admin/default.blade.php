@@ -45,20 +45,20 @@
 
         <div class="wrapper ">
 {{--             @if(Request::is('admin*')) --}}
-                @include('layouts.partials.sidebar')
+                @include('templates.admin.partials.sidebar')
             {{-- @endif --}}
 
             <div class="main-panel">
 {{--                 @if(Request::is('admin*')) --}}
               <!-- Navbar -->
-                @include('layouts.partials.topbar')
+                @include('templates.admin.partials.topbar')
               <!-- End Navbar -->
                 {{-- @endif --}}
 
                 @yield('content')
 
 {{--                 @if(Request::is('admin*')) --}}
-                    @include('layouts.partials.footer')
+                    @include('templates.admin.partials.footer')
                 {{-- @endif --}}
                 
                 {{-- @include('layouts.partial.controlsidebar') --}}

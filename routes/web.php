@@ -15,15 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//route Admin CV atau Company
 
+//==================================================================================
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Pemanggilan tanpa controller
-Route::get('admin/dashboard', function(){
-    return view('template_backend.admin.dashboard');
+Route::group(['prefix' => '/'], function(){
+  Route::get('login','AuthCompany\AuthCompanyController@showLoginForm')->name('login');
+  Route::post('login', 'AuthCompany\AuthCompanyController@login')->name('company.login');
+  Route::get('register','AuthCompany\AuthCompanyController@showRegisterForm')->name('register');
+  Route::post('postregister', 'AuthCompany\AuthCompanyController@register')->name('company.register');
+  Route::get('company/dashboard', 'AuthCompany\AuthCompanyController@index')->name('company.dashboard');
+
 });
 
-Route::get('company/dashboard', function(){
-    return view('template_backend.company.dashboard');
-});
+//==================================================================================
+
+//route Admin atau SuperAdmin
+
+Route::get('/admin', 'AuthAdmin\AuthAdminController@index')->name('admin');
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+

@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use DB;
+use Auth;
 
 class Company extends Authenticatable
 {

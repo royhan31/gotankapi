@@ -13,6 +13,7 @@ class CreateDriversTable extends Migration
      */
     public function up()
     {
+        Schema::defaultStringLength(191);
         Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_driver');

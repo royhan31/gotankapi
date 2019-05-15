@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('templates.admin.default')
 
-@section('title','Dashboard')
+@section('title','Admin Dashboard')
 
 @push('css')
 

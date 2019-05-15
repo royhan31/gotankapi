@@ -45,14 +45,13 @@
             <div class="overlay"></div>
         </div>
         <!-- /Background Image -->
-
-        @include('layouts.partials._fhome')
+        @include('templates.landing._home')
 
     </header>
     <!-- /Header -->
 
     <!-- About -->
-        @include('layouts.partials._fabout')
+        @include('templates.landing._about')
     <!-- /About -->
 
     <!-- Portfolio -->
@@ -60,13 +59,13 @@
     <!-- /Portfolio -->
 
     <!-- Service -->
-        @include('layouts.partials._fservice')
+        @include('templates.landing._service')
     <!-- /Service -->
 
 
     <!-- Why Choose Us -->
         <!-- Testimonial -->
-        @include('layouts.partials._ftestimoni')
+{{--         @include('templates.landing._testimoni') --}}
         <!-- /Testimonial -->
     <!-- /Why Choose Us -->
 
@@ -79,12 +78,12 @@
     <!-- /Team -->
 
     <!-- Contact -->
-        @include('layouts.partials._fcontact')
+        @include('templates.landing._contact')
     <!-- /Contact -->
 
 
     <!-- Footer -->
-        @include('layouts.partials._ffooter')
+        @include('templates.landing._footer')
     <!-- /Footer -->
 
     <!-- Back to top -->

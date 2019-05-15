@@ -67,6 +67,12 @@ return [
             'driver' => 'session',
             'provider' => 'companies',
         ],
+
+        'company-api' => [
+            'driver' => 'token',
+            'provider' => 'companies',
+            'hash' => false,
+        ],
     ],
 
     /*

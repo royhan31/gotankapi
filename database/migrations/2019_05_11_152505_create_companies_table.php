@@ -13,13 +13,14 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
+        Schema::defaultStringLength(191);
         Schema::create('companies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('username');
             $table->string('email')->unique();
             $table->string('password');
-            $table->text('description');
+            $table->text('description')->nullable();
+            $table->string('api_token');
             $table->string('avatar')->default('default.jpg')->nullable();
             $table->text('address');
             $table->rememberToken();
