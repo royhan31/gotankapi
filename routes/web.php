@@ -17,14 +17,12 @@ Route::get('/', function () {
 
 //route Admin CV atau Company
 
-//==================================================================================
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => '/'], function(){
   Route::get('login','AuthCompany\AuthCompanyController@showLoginForm')->name('login');
   Route::get('register','AuthCompany\AuthCompanyController@showRegisterForm')->name('register');
-  Route::post('login','AuthCompany\AuthCompanyController@login')->name('get.login');
-  Route::post('register','AuthCompany\AuthCompanyController@register')->name('get.register');
+  Route::post('login','AuthCompany\AuthCompanyController@login')->name('company.login');
+  Route::post('register','AuthCompany\AuthCompanyController@register')->name('company.register');
   Route::post('logout','AuthCompany\AuthCompanyController@logoutCompany')->name('logout');
   Route::get('dashboard','Company\CompanyController@index')->name('dashboard');
 });

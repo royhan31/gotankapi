@@ -9,7 +9,7 @@ use App\Company;
 use Auth;
 
 class AuthCompanyController extends Controller{
-	
+
     public function __construct(){
         $this->middleware('guest:company')->except('logoutCompany');
     }
@@ -20,7 +20,7 @@ class AuthCompanyController extends Controller{
     public function showRegisterForm(){
       return view('authCompany.register');
     }
-	
+
 	public function register(Request $request){
       $this->validate($request, [
         'name' => 'required|min:3',
@@ -47,7 +47,7 @@ class AuthCompanyController extends Controller{
         'password' => $request->password
       ];
       if (!Auth::guard('company')->attempt($credential, $request->member)) {
-          return back();
+          return back()->withInput($request->only('email','remember'));
       }
       return redirect()->route('dashboard');
     }
