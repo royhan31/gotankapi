@@ -33,7 +33,7 @@ class AuthCompanyController extends Controller{
           'name' => $request->name,
           'email' => $request->email,
           'password' => bcrypt($request->password),
-          'address' => $request->password,
+          'address' => $request->address,
           'phone' => $request->phone
       ]);
       return redirect()->route('login')->with('message','Berhasil Registrasi, Silahkan Login');

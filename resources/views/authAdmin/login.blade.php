@@ -2,7 +2,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href=""><b>Gotank</b> Admin</a>
+    <a href=""><b>Go-</b>Tank Admin</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -26,7 +26,7 @@
           </div>
         </div> -->
         <!-- /.col -->
-        <div class="col-xs-6">
+        <div class="col-xs-12">
           <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
         </div>
         <!-- /.col -->
