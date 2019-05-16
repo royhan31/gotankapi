@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/editprofile', function() {
+  return view ('pages.company._editProfile');
+});
+
 //route Admin CV atau Company
 Route::group(['prefix' => '/'], function(){
   Route::get('login','AuthCompany\AuthCompanyController@showLoginForm')->name('login');
