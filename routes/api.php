@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 
 //adminCv atu Company
 Route::get('/company','API\Company\CompanyController@index');
+Route::get('/company/{id}','API\Company\CompanyController@show');
 // Route::post('admin/register','API\Admin\AuthAdminController@register');
 // Route::post('admin/login','API\Admin\AuthAdminController@login');
 // Route::get('admin','API\Admin\AuthAdminController@listAdmin');
