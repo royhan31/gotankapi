@@ -16,44 +16,34 @@
       <li class="header"></li>
 
       <li class="treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
+        
+         <a href="dashboard"> <i class="fa fa-dashboard"></i> Dashboard </a>
+      
       </li>
 
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-files-o"></i>
-          <span>Layout Options</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right"></span>
-          </span>
-        </a>
-      </li>
-
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-pie-chart"></i>
-          <span>Charts</span>
+          <i class="fa fa-folder"></i>
+          <span>Pesan</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+          <li><a href="/beranda/datapesan"><i class="fa fa-circle-o"></i> Data Pesan</a></li>
         </ul>
       </li>
 
       <li class="treeview">
-        <a href="#">
-          <i class="fa fa-laptop"></i>
-          <span>UI Elements</span>
+        <a href="/beranda/datadriver">
+          <i class="fa fa-truck"></i>
+          <span>Supir</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
+          <ul class="treeview-menu">
+          <li><a href="{{ url('driver') }}"><i class="fa fa-circle-o"></i> Data Supir</a></li>
+        </ul>
         </a>
       </li>
 
@@ -91,6 +81,16 @@
           </span>
         </a>
       </li>
+
+      <li class="active">
+          <a href="calendar.html">
+            <i class="fa fa-calendar"></i> <span>Calendar</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-red">3</small>
+              <small class="label pull-right bg-blue">17</small>
+            </span>
+          </a>
+        </li>
   </section>
   <!-- /.sidebar -->
 </aside>

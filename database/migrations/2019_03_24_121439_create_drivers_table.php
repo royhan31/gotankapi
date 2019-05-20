@@ -16,9 +16,11 @@ class CreateDriversTable extends Migration
         Schema::defaultStringLength(191);
         Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_driver');
-            $table->string('username');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone',13)->unique();
             $table->string('api_token');
             $table->string('avatar')->default('default.jpg')->nullable();
             $table->timestamps();

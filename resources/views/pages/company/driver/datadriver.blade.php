@@ -7,6 +7,7 @@
 @endpush
 
 @section('content')
+
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -26,7 +27,7 @@
           <div class="col-xs-12">       
             <div class="box">
               <div class="box-header">
-                <a href="{{url('driver/create')}}" class="btn btn-success fa fa-plus-square-o"> Tambah </a>
+                <a href="{{ url('driver/create') }}" class="btn btn-success fa fa-plus-square-o"> Tambah </a>
                 <a href="#" class="btn btn-success fa fa-print"> Print </a>                
               </div>
               <!-- /.box-header -->
@@ -43,19 +44,36 @@
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach($data_driver as $drivers)
-                  <tr>
-                    <td>{{ $drivers->id }}</td>
-                    <td>{{ $drivers->name }}</td>
-                    <td>{{ $drivers->email }}</td>
-                    <td>{{ $drivers->avatar }}</td>
-                    <td>{{ $drivers->phone }}</td>
-                    <td>
-                        <a href="#" class="btn btn-success-sm" data-toggle="tooltip" data-placement="top" title="Edit"><span class="fa fa-edit"></span></a>
-                        <a href="#" class="btn btn-danger-sm" data-toggle="tooltip" data-placement="top" title="Hapus"><span class="fa fa-trash"></span></a>
-                    </td>
-                  </tr>
-                    @endforeach
+                    @php
+                      $no = 1;
+                    @endphp
+
+                    {{-- cek data di database --}}
+                    @if(sizeof($data_driver)>0)
+                      @foreach($data_driver as $drivers)
+                        <tr>
+                          <td>{{ $no++ }}</td>
+                          <td>{{ $drivers->name }}</td>
+                          <td>{{ $drivers->email }}</td>
+                          <td>{{ $drivers->avatar }}</td>
+                          <td>{{ $drivers->phone }}</td>
+                          <td>
+                              <form action="{{url('driver/'.$drivers->id) }}" method="POST" class="text-center">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{url('driver/'.$drivers->id.'/edit') }}" class="fa fa-edit btn btn-primary"></a>
+                                <button type="submit" class="fa fa-trash btn btn-danger"></button>
+                              </form>                       
+                          </td>
+                        </tr>
+                      @endforeach
+
+                    @else
+                      <tr>
+                        <td class="text-center" colspan="6"><i>Tidak ada data</i></td>
+                      </tr>
+                    @endif
+
                   </tbody>
                   <tfoot>
                   </tfoot>

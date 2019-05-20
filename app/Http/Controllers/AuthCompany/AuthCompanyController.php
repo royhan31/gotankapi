@@ -11,7 +11,7 @@ use App\Company;
 class AuthCompanyController extends Controller{
 
     public function __construct(){
-        $this->middleware('guest:company')->except('logoutCompany');
+        $this->middleware('guest:company', ['verified'])->except('logoutCompany');
     }
 
     public function showLoginForm(){
@@ -21,7 +21,7 @@ class AuthCompanyController extends Controller{
       return view('authCompany.register');
     }
 
-	public function register(Request $request){
+  	public function register(Request $request){
       $this->validate($request, [
         'name' => 'required|min:3',
         'email' => 'required|email|max:255|unique:companies',

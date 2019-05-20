@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use DB;
+use Auth;
 
 class Admin extends Authenticatable
 {

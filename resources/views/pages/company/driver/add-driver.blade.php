@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('templates.company.default')
 
 @section('title','Dashboard')
 
 @push('css')
-
+  
 @endpush
 
 @section('content')
@@ -32,44 +32,41 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="{{ url('driver') }}" method="POST">
+                  @csrf
                   <div class="box-body">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Nama</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="Nama">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Alamat</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">No Hp</label>
+                            <label for="inputEmail3" class="col-sm-2 control-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="password" name="password" class="form-control" id="inputEmail3" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">No Hp</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="text" name="phone" class="form-control" id="inputEmail3" placeholder="Email">
                             </div>
                         </div>
                   </div>
                   <!-- /.box-body -->
                   <div class="box-footer">
                     <div class="col-sm-2 col-sm-offset-6"> 
-                    <a href="#" type="submit" class="btn btn-success">Simpan</a>
-                    <a href="#" type="submit" class="btn btn-danger pull-right">Batal</a>
+                      <button class="btn btn-success" type="submit">Tambah</button>
+                      <button class="btn btn-danger pull-right" type="reset">Batal</button>
+{{--                     <a href="#" type="submit" class="btn btn-success">Simpan</a>
+                    <a href="#" type="submit" class="btn btn-danger pull-right">Batal</a> --}}
                     </div>
                   </div>
                   <!-- /.box-footer -->

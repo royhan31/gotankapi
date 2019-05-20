@@ -20,7 +20,7 @@
   });
 </script>
 <script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
 </script>
